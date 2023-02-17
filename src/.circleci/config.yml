@@ -1,0 +1,29 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/openjdk:19.0.2
+    steps:
+      - checkout
+      - run:
+          name: Build
+          command: |
+            mvn clean package -Dmaven.test.skip=true
+            echo 'Build done'
+
+  test:
+    docker:
+      - image : cimg/openjdk:19.0.2
+    steps:
+      - checkout
+      - run :
+          name : Test
+          command : |
+            mvn clean test
+            echo 'Test done'
+
+    workflows:
+      verification:
+        jobs:
+          - build
+          - test
