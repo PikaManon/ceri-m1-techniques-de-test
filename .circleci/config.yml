@@ -23,7 +23,7 @@ jobs:
             echo 'Test done'
 
     workflows:
-      verification:
+      build_and_test:
         jobs:
           - build
           - test
