@@ -20,6 +20,7 @@
 </properties>
 <name>pokemon-project</name>
 <url> http://univ-avignon.fr/ </url>
+
 <build>
 <plugins>
     <plugin>
@@ -44,7 +45,9 @@
         </executions>
     </plugin>
 </plugins>
+    <testSourceDirectory>src/test/java</testSourceDirectory>
 </build>
+
 <dependencies>
 <dependency>
     <groupId>junit</groupId>
@@ -66,4 +69,4 @@
 </dependency>
 
 </dependencies>
-        </project>
+</project>
