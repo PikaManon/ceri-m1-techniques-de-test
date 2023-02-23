@@ -1,6 +1,6 @@
 package fr.univavignon.pokedex.api;
 
-import org.mockito.Mock;
+//import org.mockito.Mock;
 
 /**
  * Pokemon POJO.
