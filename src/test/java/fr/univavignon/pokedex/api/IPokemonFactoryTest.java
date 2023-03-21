@@ -31,7 +31,7 @@ public class IPokemonFactoryTest {
         Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getHp(), aquali.getHp());
         Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getIndex(), aquali.getIndex());
         Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getAttack(), aquali.getAttack());
-        Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getIv(), aquali.getIv());
+        Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getIv(), aquali.getIv(), 0.1);
     }
 
     @Test
