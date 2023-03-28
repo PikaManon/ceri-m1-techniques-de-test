@@ -52,7 +52,8 @@ public class Pokedex implements IPokedex {
 
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-        return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+        //return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
+        return null;
     }
 
     @Override
