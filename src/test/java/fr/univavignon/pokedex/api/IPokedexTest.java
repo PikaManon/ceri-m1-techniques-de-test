@@ -51,8 +51,8 @@ public class IPokedexTest {
         Assert.assertEquals(pokedex.getPokemon(0).getIndex(),0);
         Assert.assertEquals(pokedex.getPokemon(0).getName(), "Bulbizarre");
         when(pokedex.getPokemon(133)).thenReturn(aquali);
-        Assert.assertEquals(pokedex.getPokemon(1).getIndex(),133);
-        Assert.assertEquals(pokedex.getPokemon(1).getName(), "Aquali");
+        Assert.assertEquals(pokedex.getPokemon(133).getIndex(),133);
+        Assert.assertEquals(pokedex.getPokemon(133).getName(), "Aquali");
     }
 
     @Test
