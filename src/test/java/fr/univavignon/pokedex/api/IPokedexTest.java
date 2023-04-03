@@ -105,4 +105,28 @@ public class IPokedexTest {
         Assert.assertEquals(pokedex.getPokemons(PokemonComparators.NAME), unmodifiablePokemonsSortedByName);
     }
 
+    @Test
+    public void createPokemonTest() throws PokedexException {
+
+        Pokemon testBulbizarre = pokedex.createPokemon(0,613,64, 4000,4 );
+        Assert.assertEquals(testBulbizarre.getCp(), bulbizarre.getCp());
+        Assert.assertEquals(testBulbizarre.getCandy(), bulbizarre.getCandy());
+        Assert.assertEquals(testBulbizarre.getDust(), bulbizarre.getDust());
+        Assert.assertEquals(testBulbizarre.getHp(), bulbizarre.getHp());
+        Assert.assertEquals(testBulbizarre.getIndex(), bulbizarre.getIndex());
+        Assert.assertEquals(testBulbizarre.getAttack(), bulbizarre.getAttack());
+        Assert.assertTrue(testBulbizarre.getIv() >=0 && testBulbizarre.getIv() <=100);
+
+    }
+
+    @Test
+    public void getPokemonMetadataTest() throws PokedexException {
+        PokemonMetadata aqualiMetadata = pokedex.getPokemonMetadata(133);
+        Assert.assertEquals(aqualiMetadata.getIndex(), aqualiMetadata.getIndex());
+        Assert.assertEquals(aqualiMetadata.getName(), aqualiMetadata.getName());
+        Assert.assertEquals(aqualiMetadata.getAttack(), aqualiMetadata.getAttack());
+        Assert.assertEquals(aqualiMetadata.getDefense(), aqualiMetadata.getDefense());
+        Assert.assertEquals(aqualiMetadata.getStamina(), aqualiMetadata.getStamina());
+    }
+
 }
