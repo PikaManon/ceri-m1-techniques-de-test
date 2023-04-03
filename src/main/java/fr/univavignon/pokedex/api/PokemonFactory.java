@@ -1,6 +1,8 @@
 package fr.univavignon.pokedex.api;
 
 
+import java.util.Random;
+
 public class PokemonFactory implements IPokemonFactory{
 
     IPokemonMetadataProvider pokemonMetadataProvider = new PokemonMetadataProvider();
@@ -9,9 +11,9 @@ public class PokemonFactory implements IPokemonFactory{
     @Override
     public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
         PokemonMetadata pokemonMetadata = pokemonMetadataProvider.getPokemonMetadata(index);
-       // int rand = Math.random() * 100 ;
-        //Pokemon pokemon = new Pokemon(index, pokemonMetadata.getName(), pokemonMetadata.getAttack(), pokemonMetadata.getDefense(), pokemonMetadata.getStamina(),cp, hp, dust, candy, );
-        //return pokemon;
-        return null;
+        Random rand = new Random();
+        int randIV = rand.nextInt(101);
+        Pokemon pokemon = new Pokemon(index, pokemonMetadata.getName(), pokemonMetadata.getAttack(), pokemonMetadata.getDefense(), pokemonMetadata.getStamina(),cp, hp, dust, candy, randIV);
+        return pokemon;
     }
 }

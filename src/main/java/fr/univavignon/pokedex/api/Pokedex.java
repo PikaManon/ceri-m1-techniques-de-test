@@ -29,12 +29,13 @@ public class Pokedex implements IPokedex {
 
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-        if (id < 0 || id >= capturedPokemon.size()){
-            throw new PokedexException("this pokemon's index doesn't exist");
+        for(Pokemon pokemon : capturedPokemon){
+            if(pokemon.getIndex() == id){
+                return pokemon;
+            }
         }
-        else{
-            return capturedPokemon.get(id);
-        }
+        throw new PokedexException("this pokemon's index isn't in the Pokedex");
+
     }
 
     @Override
@@ -51,11 +52,9 @@ public class Pokedex implements IPokedex {
 
 
     @Override
-    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-        //return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
-        return null;
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) throws PokedexException {
+        return pokemonFactory.createPokemon(index, cp, hp, dust, candy);
     }
-
     @Override
     public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
         return pokemonMetadataProvider.getPokemonMetadata(index);

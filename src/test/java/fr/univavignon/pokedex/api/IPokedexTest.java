@@ -50,15 +50,15 @@ public class IPokedexTest {
         when(pokedex.getPokemon(0)).thenReturn(bulbizarre);
         Assert.assertEquals(pokedex.getPokemon(0).getIndex(),0);
         Assert.assertEquals(pokedex.getPokemon(0).getName(), "Bulbizarre");
-        when(pokedex.getPokemon(1)).thenReturn(aquali);
+        when(pokedex.getPokemon(133)).thenReturn(aquali);
         Assert.assertEquals(pokedex.getPokemon(1).getIndex(),133);
         Assert.assertEquals(pokedex.getPokemon(1).getName(), "Aquali");
     }
 
     @Test
     public void exceptionGetPokemonWithIDTest() throws PokedexException{
-        when(pokedex.getPokemon(-151)).thenThrow(new PokedexException("this pokemon's index doesn't exist"));
-        Assert.assertThrows(PokedexException.class, () -> pokedex.getPokemon(-151));
+        when(pokedex.getPokemon(100)).thenThrow(new PokedexException("this pokemon's index isn't in the Pokedex"));
+        Assert.assertThrows(PokedexException.class, () -> pokedex.getPokemon(100));
     }
 
     @Test
