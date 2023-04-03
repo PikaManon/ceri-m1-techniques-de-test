@@ -16,16 +16,19 @@ public class IPokemonTrainerFactoryTest {
 
     @BeforeClass
     public static void setUpClass(){
-        pokedex = Mockito.mock(IPokedex.class);
+        //pokedex = Mockito.mock(IPokedex.class);
+        pokedexFactory = new PokedexFactory();
+        pokemonTrainerFactory = new PokemonTrainerFactory();
+        pokedex = new Pokedex(new PokemonMetadataProvider(), new PokemonFactory());
         pokemonTrainer = new PokemonTrainer("Manon", Team.MYSTIC, pokedex);
-        pokedexFactory = Mockito.mock(IPokedexFactory.class);
-        pokemonTrainerFactory = Mockito.mock(IPokemonTrainerFactory.class);
+        //pokedexFactory = Mockito.mock(IPokedexFactory.class);
+        //pokemonTrainerFactory = Mockito.mock(IPokemonTrainerFactory.class);
     }
 
     @Test
     public void createTrainerTest(){
-        when(pokemonTrainerFactory.createTrainer("Manon", Team.MYSTIC, pokedexFactory)).thenReturn(pokemonTrainer);
-        Assert.assertEquals(pokemonTrainerFactory.createTrainer("Manon", Team.MYSTIC, pokedexFactory).getPokedex(), pokemonTrainer.getPokedex());
+        //when(pokemonTrainerFactory.createTrainer("Manon", Team.MYSTIC, pokedexFactory)).thenReturn(pokemonTrainer);
+        Assert.assertEquals(pokemonTrainerFactory.createTrainer("Manon", Team.MYSTIC, pokedexFactory).getPokedex().size(), pokemonTrainer.getPokedex().size());
         Assert.assertEquals(pokemonTrainerFactory.createTrainer("Manon", Team.MYSTIC, pokedexFactory).getTeam(), pokemonTrainer.getTeam());
         Assert.assertEquals(pokemonTrainerFactory.createTrainer("Manon", Team.MYSTIC, pokedexFactory).getName(), pokemonTrainer.getName());
 

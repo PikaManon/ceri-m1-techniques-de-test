@@ -17,16 +17,25 @@ public class IPokedexFactoryTest {
 
     @BeforeClass
     public static void setUpClass(){
-        pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+        /*pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
         pokemonFactory = Mockito.mock(IPokemonFactory.class);
         pokedexFactory = Mockito.mock(IPokedexFactory.class);
-        pokedex = Mockito.mock(IPokedex.class);
+        pokedex = Mockito.mock(IPokedex.class);*/
+
+        pokemonMetadataProvider = new PokemonMetadataProvider();
+        pokemonFactory = new PokemonFactory();
+        pokedexFactory = new PokedexFactory();
+        pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
     }
 
     @Test
     public void createPokedexTest(){
-        when(pokedexFactory.createPokedex(pokemonMetadataProvider,pokemonFactory)).thenReturn(pokedex);
+        /*when(pokedexFactory.createPokedex(pokemonMetadataProvider,pokemonFactory)).thenReturn(pokedex);*/
+
         Assert.assertEquals(pokedexFactory.createPokedex(pokemonMetadataProvider,pokemonFactory).size(), 0);
+
+
+
     }
 
 }

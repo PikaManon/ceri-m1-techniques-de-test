@@ -15,14 +15,15 @@ public class IPokemonMetadataProviderTest {
 
     @BeforeClass
     public static void setUpClass(){
-        pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+        pokemonMetadataProvider = new PokemonMetadataProvider();
+        //pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
         aqualiMetadata = new PokemonMetadata(133, "Aquali", 186, 168, 260);
         bulbizarreMetadata = new PokemonMetadata(0, "Bulbizarre",126,126,90);
     }
 
     @Test
     public void getBulbizarreMetadataTest() throws PokedexException {
-        when(pokemonMetadataProvider.getPokemonMetadata(0)).thenReturn(bulbizarreMetadata);
+        //when(pokemonMetadataProvider.getPokemonMetadata(0)).thenReturn(bulbizarreMetadata);
         Assert.assertEquals(pokemonMetadataProvider.getPokemonMetadata(0).getIndex(), bulbizarreMetadata.getIndex());
         Assert.assertEquals(pokemonMetadataProvider.getPokemonMetadata(0).getName(), bulbizarreMetadata.getName());
         Assert.assertEquals(pokemonMetadataProvider.getPokemonMetadata(0).getAttack(), bulbizarreMetadata.getAttack());
@@ -32,7 +33,7 @@ public class IPokemonMetadataProviderTest {
 
     @Test
     public void getAqualiMetadataTest() throws PokedexException {
-        when(pokemonMetadataProvider.getPokemonMetadata(133)).thenReturn(aqualiMetadata);
+        //when(pokemonMetadataProvider.getPokemonMetadata(133)).thenReturn(aqualiMetadata);
         Assert.assertEquals(pokemonMetadataProvider.getPokemonMetadata(133).getIndex(), aqualiMetadata.getIndex());
         Assert.assertEquals(pokemonMetadataProvider.getPokemonMetadata(133).getName(), aqualiMetadata.getName());
         Assert.assertEquals(pokemonMetadataProvider.getPokemonMetadata(133).getAttack(), aqualiMetadata.getAttack());
@@ -42,7 +43,7 @@ public class IPokemonMetadataProviderTest {
 
     @Test
     public void exceptionMetadataTest() throws PokedexException {
-        when(pokemonMetadataProvider.getPokemonMetadata(151)).thenThrow(new PokedexException("this pokemon's index doesn't exist"));
+        //when(pokemonMetadataProvider.getPokemonMetadata(151)).thenThrow(new PokedexException("this pokemon's index doesn't exist"));
         Assert.assertThrows(PokedexException.class, () -> pokemonMetadataProvider.getPokemonMetadata(151));
     }
 
