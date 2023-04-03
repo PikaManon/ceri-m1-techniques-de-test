@@ -23,7 +23,7 @@ public class IPokemonFactoryTest {
 
 
     @Test
-    public void createAqualiTest(){
+    public void createAqualiTest() throws PokedexException {
         when(pokemonFactory.createPokemon(133,2729,202,5000,4)).thenReturn(aquali);
         Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getCp(), aquali.getCp());
         Assert.assertEquals(pokemonFactory.createPokemon(133,2729,202,5000,4).getCandy(), aquali.getCandy());
@@ -35,7 +35,7 @@ public class IPokemonFactoryTest {
     }
 
     @Test
-    public void createBulbizarreTest(){
+    public void createBulbizarreTest() throws PokedexException {
         when(pokemonFactory.createPokemon(0,613,64,4000,4)).thenReturn(bulbizarre);
         Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getCp(), bulbizarre.getCp());
         Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getCandy(), bulbizarre.getCandy());
