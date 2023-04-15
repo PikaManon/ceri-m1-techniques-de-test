@@ -29,11 +29,17 @@ jobs:
       - run:
           name: Test
           command: mvn test
+      - run:
+          name: site #pour màj le checkstyle
+          command: mvn site
+      - run:
+          name: post #pour màj le badge de checkstyle
+          command: mvn post-site
       - store_artifacts:
           path: target/site/jacoco/jacoco.xml
           destination: /tmp/artifacts
       - store_artifacts:
-          path: target/site/checkstyle-result.xml
+          path: target/checkstyle-result.html
           destination: /tmp/artifacts
       - codecov/upload
 
