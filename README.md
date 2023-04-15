@@ -5,7 +5,7 @@ M1 IA Classique
 
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=svg)](https://circleci.com/gh/circleci/circleci-docs)
 [![codecov](https://codecov.io/gh/PikaManon/ceri-m1-techniques-de-test/branch/master/graph/badge.svg?token=GB7410C63N)](https://codecov.io/gh/PikaManon/ceri-m1-techniques-de-test)
-[![Checkstyle](target/site/badges/checkstyle.svg)](target/checkstyle-result.xml)
+[![Checkstyle](target/site/badges/checkstyle.svg)](target/checkstyle-result.xml) 
 ## Introduction
 
 Vous allez à travers ces projet mettre en application une partie des aspects évoqués en cours vis à vis des techniques de tests.  
