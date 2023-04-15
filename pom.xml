@@ -94,6 +94,16 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <configuration>
+                            <configLocation>target/checkstyle-result.xml</configLocation>
+                            <module name="HiddenField">
+                                <property name="tokens" value="VARIABLE_DEF"/>
+                            </module>
+                        </configuration>
+                    </execution>
+                </executions>
                 <reportSets>
                     <reportSet>
                         <reports>
