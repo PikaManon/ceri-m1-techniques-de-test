@@ -7,11 +7,11 @@ import java.util.List;
 
 public class Pokedex implements IPokedex {
 
-    List<Pokemon> capturedPokemon = new ArrayList<>();
-    IPokemonMetadataProvider pokemonMetadataProvider;
-    IPokemonFactory pokemonFactory;
+    private List<Pokemon> capturedPokemon = new ArrayList<>();
+    private IPokemonMetadataProvider pokemonMetadataProvider;
+    private IPokemonFactory pokemonFactory;
 
-    public Pokedex(IPokemonMetadataProvider pokemonMetadataProvider, IPokemonFactory pokemonFactory){
+    public Pokedex(IPokemonMetadataProvider pokemonMetadataProvider, IPokemonFactory pokemonFactory) {
         this.pokemonFactory = pokemonFactory;
         this.pokemonMetadataProvider = pokemonMetadataProvider;
     }
@@ -29,8 +29,8 @@ public class Pokedex implements IPokedex {
 
     @Override
     public Pokemon getPokemon(int id) throws PokedexException {
-        for(Pokemon pokemon : capturedPokemon){
-            if(pokemon.getIndex() == id){
+        for (Pokemon pokemon : capturedPokemon) {
+            if (pokemon.getIndex() == id) {
                 return pokemon;
             }
         }
