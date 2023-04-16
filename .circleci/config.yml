@@ -8,8 +8,12 @@ orbs:
 # Define a job to be invoked later in a workflow.
 # See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
+
   # Below is the definition of your job to build and test your app, you can rename and customize it as you want.
   build-and-test:
+    filters:
+      branches:
+        only: master
     # These next lines define a Docker executor: https://circleci.com/docs/2.0/executor-types/
     # You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
     # Be sure to update the Docker image tag below to openjdk version of your application.
@@ -35,7 +39,18 @@ jobs:
       - run:
           name: post #pour màj le badge de checkstyle
           command: mvn post-site
-
+      - run:
+          name: deployDocumentation
+          command: |
+            git config --global user.email "manon.samson@univ-avignon.fr"
+            git config --global user.name "PikaManon"
+            git clone --branch=gh-pages --depth=1 git@github.com:PikaManon/ceri-m1-techniques-de-test.git gh-pages
+            rm -rf gh-pages/*
+            cp -R target/site/apidocs/* gh-pages/
+            cd gh-pages
+            git add .
+            git commit -m "Update Javadoc"
+            git push origin gh-pages
 
       - store_artifacts:
           path: target/site/jacoco/jacoco.xml
