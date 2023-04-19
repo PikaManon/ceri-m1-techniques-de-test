@@ -4,7 +4,6 @@ import java.util.Comparator;
 
 /**
  * Enumeration of pokemon comparator.
- * 
  * @author fv
  */
 public enum PokemonComparators implements Comparator<Pokemon> {

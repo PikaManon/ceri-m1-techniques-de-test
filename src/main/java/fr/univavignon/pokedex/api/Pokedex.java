@@ -39,7 +39,7 @@ public class Pokedex implements IPokedex {
     @Override
     public int addPokemon(Pokemon pokemon) {
         capturedPokemon.add(pokemon);
-        return capturedPokemon.size()-1;
+        return capturedPokemon.size() - 1;
     }
 
     @Override
