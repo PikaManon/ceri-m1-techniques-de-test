@@ -8,16 +8,16 @@ import java.util.List;
 public class Pokedex implements IPokedex {
 
     /**
-     * The list which contains all the captured Pokemon
+     * The list which contains all the captured Pokemon.
      */
     private List<Pokemon> capturedPokemon = new ArrayList<>();
 
     /**
-     * the PokemonMetadataProvider to use
+     * the PokemonMetadataProvider to use.
      */
     private IPokemonMetadataProvider pokemonMetadataProvider;
     /**
-     * the PokemonFactory to use
+     * the PokemonFactory to use.
      */
     private IPokemonFactory pokemonFactory;
 
