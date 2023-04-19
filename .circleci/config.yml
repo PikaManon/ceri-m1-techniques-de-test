@@ -52,13 +52,13 @@ jobs:
 
       - store_artifacts:
           path: target/site/jacoco/jacoco.xml
-          destination: artifacts
+          destination: artifacts1
       - store_artifacts:
           path: target/checkstyle-result.html
-          destination: artifacts
+          destination: artifacts2
       - store_artifacts:
           path: target/site/badges/checkstyle-result.svg
-          destination: artifacts
+          destination: artifacts3
       - codecov/upload
 
 # Invoke jobs via workflows
