@@ -44,9 +44,9 @@ public class Pokedex implements IPokedex {
 
     @Override
     public Pokemon getPokemon(final int id) throws PokedexException {
-        if(id >= 0 && id < capturedPokemon.size()){
+        if (id >= 0 && id < capturedPokemon.size()) {
             return capturedPokemon.get(id);
-        } else{
+        } else {
             throw new PokedexException("this pokemon's index isn't in the Pokedex");
         }
     }
