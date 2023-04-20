@@ -59,3 +59,14 @@ public class RocketPokemonFactory implements IPokemonFactory {
     }
 
 }
+
+/**
+ * les problèmes de l'implémentation de la team Rocket :
+ *
+ * - indice du bulbizarre ne correspond pas avec le leur, 0 dans notre version et 1 dans la leur
+ * - les propriétés d'attaque, défense et stamina sont générés aléatoirement
+ * - si pokemon ne fait pas partie de leur donnée, le nom du pokémon est MissingNo
+ * - ils n'ont pas aquali
+ * - ont un pokemon à l'index -1 alors que va de 0 à 150
+ * - n utilise pas pokemon metadata
+ */
