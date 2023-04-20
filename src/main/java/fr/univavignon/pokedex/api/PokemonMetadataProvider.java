@@ -20,7 +20,7 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider {
     }
 
     @Override
-    public PokemonMetadata getPokemonMetadata(int index) throws PokedexException {
+    public PokemonMetadata getPokemonMetadata(final int index) throws PokedexException {
         if (pokemonMetadatas.containsKey(index)) {
             return pokemonMetadatas.get(index);
         } else {

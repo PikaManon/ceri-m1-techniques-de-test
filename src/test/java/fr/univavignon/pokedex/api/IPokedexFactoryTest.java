@@ -24,6 +24,7 @@ public class IPokedexFactoryTest {
 
         pokemonMetadataProvider = new PokemonMetadataProvider();
         pokemonFactory = new PokemonFactory();
+        //pokemonFactory = new RocketPokemonFactory();
         pokedexFactory = new PokedexFactory();
         pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
     }

@@ -14,7 +14,6 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * @return Number of pokemon in this pokedex.
 	 */
 	int size();
-	
 	/**
 	 * Adds the given pokemon to this pokedex and returns
 	 * it unique index.
@@ -22,7 +21,6 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * @return Index of this pokemon relative to this pokedex.
 	 */
 	int addPokemon(Pokemon pokemon);
-	
 	/**
 	 * Locates the pokemon identified by the given id.
 	 * @param id Unique pokedex relative identifier.
@@ -30,7 +28,6 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * @throws PokedexException If the given index is not valid.
 	 */
 	Pokemon getPokemon(int id) throws PokedexException;
-	
 	/**
 	 * Returns an unmodifiable list of all pokemons this pokedex contains.
 	 * @return Unmodifiable list of all pokemons.
@@ -44,5 +41,4 @@ public interface IPokedex extends IPokemonMetadataProvider, IPokemonFactory {
 	 * @return Sorted unmodifiable list of all pokemons.
 	 */
 	List<Pokemon> getPokemons(Comparator<Pokemon> order);
-	
 }

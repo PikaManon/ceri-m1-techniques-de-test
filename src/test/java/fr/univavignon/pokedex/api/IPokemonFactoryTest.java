@@ -16,7 +16,8 @@ public class IPokemonFactoryTest {
 
     @BeforeClass
     public static void setUpClass(){
-        pokemonFactory = new PokemonFactory();
+        //pokemonFactory = new PokemonFactory();
+        pokemonFactory = new RocketPokemonFactory();
         //pokemonFactory = Mockito.mock(IPokemonFactory.class);
         aquali = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,100);
         bulbizarre = new Pokemon(0,"Bulbizarre",126,126,90,613,64,4000,4,56);
@@ -27,7 +28,7 @@ public class IPokemonFactoryTest {
     public void createAqualiTest() throws PokedexException {
         //when(pokemonFactory.createPokemon(133,2729,202,5000,4)).thenReturn(aquali);
         Pokemon testAquali = pokemonFactory.createPokemon(133,2729,202,5000,4);
-
+        Assert.assertEquals(testAquali.getName(), aquali.getName());
         Assert.assertEquals(testAquali.getCp(), aquali.getCp());
         Assert.assertEquals(testAquali.getCandy(), aquali.getCandy());
         Assert.assertEquals(testAquali.getDust(), aquali.getDust());
@@ -40,6 +41,7 @@ public class IPokemonFactoryTest {
     @Test
     public void createBulbizarreTest() throws PokedexException {
         //when(pokemonFactory.createPokemon(0,613,64,4000,4)).thenReturn(bulbizarre);
+        Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getName(), bulbizarre.getName());
         Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getCp(), bulbizarre.getCp());
         Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getCandy(), bulbizarre.getCandy());
         Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getDust(), bulbizarre.getDust());
