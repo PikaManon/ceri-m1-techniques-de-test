@@ -68,6 +68,7 @@ public class IPokedexTest {
     public void exceptionGetPokemonWithIDTest() throws PokedexException{
         //when(pokedex.getPokemon(100)).thenThrow(new PokedexException("this pokemon's index isn't in the Pokedex"));
         Assert.assertThrows(PokedexException.class, () -> pokedex.getPokemon(100));
+        Assert.assertThrows(PokedexException.class, () -> pokedex.getPokemon(-1));
     }
 
     @Test
