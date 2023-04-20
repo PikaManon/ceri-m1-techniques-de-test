@@ -26,7 +26,7 @@ public class Pokedex implements IPokedex {
      * @param pokemonMetadataProvider PokemonMetadataProvider to add to this pokedex.
      * @param pokemonFactory PokemonFactory to add to this pokedex.
      */
-    public Pokedex(final IPokemonMetadataProvider pokemonMetadataProvider, IPokemonFactory pokemonFactory) {
+    public Pokedex(final IPokemonMetadataProvider pokemonMetadataProvider, final IPokemonFactory pokemonFactory) {
         this.pokemonFactory = pokemonFactory;
         this.pokemonMetadataProvider = pokemonMetadataProvider;
     }
@@ -37,7 +37,7 @@ public class Pokedex implements IPokedex {
         return capturedPokemon.size();
     }
     @Override
-    public int addPokemon(Pokemon pokemon) {
+    public int addPokemon(final Pokemon pokemon) {
         capturedPokemon.add(pokemon);
         return capturedPokemon.size() - 1;
     }
