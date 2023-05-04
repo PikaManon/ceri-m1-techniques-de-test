@@ -29,8 +29,14 @@ public class IPokedexTest {
     }
 
     @Before
-    public void setUpTest(){
-        pokedex = new Pokedex(new PokemonMetadataProvider(), new PokemonFactory());
+    public void setUpTest() throws PokedexException {
+
+        IPokemonMetadataProvider pokemonMetadataProvider = Mockito.mock(IPokemonMetadataProvider.class);
+        PokemonMetadata aqualiMetadata = new PokemonMetadata(133, "Aquali", 186, 168, 260);
+        when(pokemonMetadataProvider.getPokemonMetadata(133)).thenReturn(aqualiMetadata);
+        IPokemonFactory pokemonFactory = Mockito.mock(IPokemonFactory.class);
+        when(pokemonFactory.createPokemon(0,613,64,4000,4)).thenReturn(bulbizarre);
+        pokedex = new Pokedex(pokemonMetadataProvider, pokemonFactory);
     }
 
     @Test

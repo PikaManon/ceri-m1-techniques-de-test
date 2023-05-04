@@ -47,6 +47,11 @@ public class IPokemonFactoryTest {
         Assert.assertEquals(pokemonFactory.createPokemon(0,613,64,4000,4).getHp(), bulbizarre.getHp());
     }
 
+    @Test
+    public void exceptionCreatePokemonTest() throws PokedexException {
+        Assert.assertThrows(PokedexException.class, () -> pokemonFactory.createPokemon(-1,0,0,0,0));
+    }
+
 
 
 
