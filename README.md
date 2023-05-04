@@ -9,7 +9,7 @@ M1 IA Classique
 
 Documentation : https://pikamanon.github.io/ceri-m1-techniques-de-test/fr/univavignon/pokedex/api/package-summary.html
 
-Le TP6 se trouve dans la branche "teamRocket".
+Le TP6 se trouve dans la branche "teamRocket". 
 
 ## Introduction
 
